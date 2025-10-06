@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class UtamaController extends Controller
+{
+    public function tampilKategori(){
+        
+    }
+
+    public function index(){
+        
+    }
+}
