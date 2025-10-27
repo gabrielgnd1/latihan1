@@ -28,7 +28,7 @@ Route::get('/ini-lebih-cantik/{lanjutan?}', function($lanjutan = 'daripada pacar
 Route::get('/ini-super-cantik/{lanjutan?}', [DepanController::class, 'superCantik']);
 
 Route::get('/daftar-kategori', [UtamaController::class, 'tampilKategori']);
-
+Route::get('/hitung-barang/{kategori}', [UtamaController::class, 'hitungBarang']);
 Route::get('/daftar-barang', [BarangController::class, 'index']);
 
 Route::get('/adminlte4', function() {

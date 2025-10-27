@@ -13,8 +13,16 @@ use Illuminate\Http\Request;
 
 class UtamaController extends Controller
 {
-    public function tampilKategori(){
-        
+    public function tampilKategori()
+    {
+        $dataKats = Kategori::all();
+        return view('daftarKategori', compact('dataKats'));
+    }
+
+    public function hitungBarang($kategoriId)
+    {
+        $count = Barang::where('kategori_id', $kategoriId)->count();
+        return response()->json(['count' => $count]);
     }
 
     public function index()

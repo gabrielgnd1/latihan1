@@ -13,10 +13,22 @@ class KategoriSeeder extends Seeder
     public function run(): void
     {
         $data = [
-            ['nama' => 'Snack'],
-            ['nama' => 'Penyetan'],
-            ['nama' => 'Jus'],
-            ['nama' => 'Minuman'],
+            [
+                'nama' => 'Snack',
+                'deskripsi' => 'Makanan ringan dan camilan'
+            ],
+            [
+                'nama' => 'Penyetan',
+                'deskripsi' => 'Aneka lauk dengan sambal'
+            ],
+            [
+                'nama' => 'Jus',
+                'deskripsi' => 'Minuman segar dari buah-buahan'
+            ],
+            [
+                'nama' => 'Minuman',
+                'deskripsi' => 'Aneka minuman non-jus'
+            ],
         ];
 
         DB::table('kategoris')->insert($data);
