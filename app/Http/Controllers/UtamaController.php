@@ -25,6 +25,28 @@ class UtamaController extends Controller
         return response()->json(['count' => $count]);
     }
 
+    public function getKategoriList()
+    {
+        $kategoris = Kategori::all();
+        return response()->json($kategoris);
+    }
+
+    public function storeKategori(Request $request)
+    {
+        $kategori = new Kategori();
+        $kategori->nama = $request->nama;
+        $kategori->deskripsi = $request->deskripsi;
+        $kategori->save();
+        
+        return response()->json(['success' => true]);
+    }
+
+    public function deleteKategori($id)
+    {
+        Kategori::find($id)->delete();
+        return response()->json(['success' => true]);
+    }
+
     public function index()
     {
         // 1. Top 5 barang paling laku

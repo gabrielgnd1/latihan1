@@ -7,6 +7,11 @@ use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
+    public function index()
+    {
+        return view('kategori.index');
+    }
+
     public function tampilKategori() {
         //Kategori ini adalah model Kategori
         //meskipun di dalam model Kategori tidak ada isi & function sama sekali, tapi karena dia extends Model maka tetap bisa dipanggil

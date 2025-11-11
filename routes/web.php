@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DepanController;
 use App\Http\Controllers\UtamaController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\KategoriController;
 use App\Http\Controllers\ReportController;
 
 Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
@@ -28,7 +29,11 @@ Route::get('/ini-lebih-cantik/{lanjutan?}', function($lanjutan = 'daripada pacar
 Route::get('/ini-super-cantik/{lanjutan?}', [DepanController::class, 'superCantik']);
 
 Route::get('/daftar-kategori', [UtamaController::class, 'tampilKategori']);
+Route::get('/kategori', [KategoriController::class, 'index']);
 Route::get('/hitung-barang/{kategori}', [UtamaController::class, 'hitungBarang']);
+Route::get('/kategori-list', [UtamaController::class, 'getKategoriList']);
+Route::post('/kategori-store', [UtamaController::class, 'storeKategori']);
+Route::post('/kategori-delete/{id}', [UtamaController::class, 'deleteKategori']);
 Route::get('/daftar-barang', [BarangController::class, 'index']);
 
 Route::get('/adminlte4', function() {
